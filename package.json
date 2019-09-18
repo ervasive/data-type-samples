@@ -1,0 +1,61 @@
+{
+  "name": "data-type-samples",
+  "version": "0.1.0",
+  "description": "Generate a collection of JavaScript data type value samples.",
+  "main": "dist/index.js",
+  "scripts": {
+    "ts:compile": "tsc --build",
+    "ts:clean": "tsc --build --clean",
+    "ts:watch": "tsc --build --watch",
+    "lint": "eslint 'src/**/*.ts'",
+    "jest": "jest",
+    "jest:watch": "jest --watchAll",
+    "test": "jest"
+  },
+  "keywords": [
+    "data-types",
+    "unit-testing",
+    "utility"
+  ],
+  "author": "Ruslan Vasiliev <ervasive@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "github.com/ervasive/data-type-samples.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ervasive/data-type-samples/issues"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "8.2.0",
+    "@commitlint/config-conventional": "8.2.0",
+    "@types/jest": "24.0.18",
+    "@typescript-eslint/eslint-plugin": "2.3.0",
+    "@typescript-eslint/parser": "2.3.0",
+    "eslint": "6.4.0",
+    "eslint-config-prettier": "6.3.0",
+    "eslint-plugin-prettier": "3.1.0",
+    "husky": "3.0.5",
+    "jest": "24.9.0",
+    "lint-staged": "9.2.5",
+    "prettier": "1.18.2",
+    "ts-jest": "24.1.0",
+    "typescript": "3.6.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
